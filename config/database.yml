@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: seal_api
+
+test:
+  <<: *default
+  database: seal_api
+
+production:
+  <<: *default
+  database: seal_api
