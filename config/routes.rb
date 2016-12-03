@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get 'hello_seal', to: 'static#hello_html'
+
 
   # V1 Nov. 2016
   namespace :api do

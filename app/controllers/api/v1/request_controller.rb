@@ -27,7 +27,14 @@ module Api
 
       private
       def request_params
-        ActionController::Parameters.new(JSON.parse(request.body.read)).require(:request).permit!
+        ActionController::Parameters.new(JSON.parse(request.body.read)).require(:request).permit(
+          :requester,
+          :subject,
+          :summary,
+          :isChecked,
+          :studentNumber,
+          :category
+        )
       end
 
     end
