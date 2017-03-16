@@ -14,7 +14,7 @@ module Api
       def show
         request = Request.find(params[:id])
         if request
-          render json: request
+          sendResponse(200,'OK', request)
         else
           sendResponse(400, 'Request not Found')
         end
@@ -22,7 +22,7 @@ module Api
 
       def index
         requests = Request.all
-        render json: requests
+        sendResponse(200,'OK',requests)
       end
 
       private

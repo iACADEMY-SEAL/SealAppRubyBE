@@ -11,6 +11,11 @@ class Status
     @data = data
   end
 
+  def to_json(*options)
+    as_json(*options).to_json(*options)
+  end
+
+  private
   def as_json(options={})
     {
       code: @code,
@@ -18,10 +23,6 @@ class Status
       token: @auth_token,
       data: @data
     }
-  end
-
-  def to_json(*options)
-    as_json(*options).to_json(*options)
   end
 
 end
